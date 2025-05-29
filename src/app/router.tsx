@@ -1,6 +1,7 @@
 import { ROUTES } from "@/shared/model/routes";
 import { createBrowserRouter } from "react-router-dom";
 import App from "@/app/ui/App";
+import { CONFIG } from "@/shared/model/config";
 
 export const router = createBrowserRouter([
 	{
@@ -24,4 +25,4 @@ export const router = createBrowserRouter([
 			},
 		],
 	},
-]);
+], {basename: CONFIG.BASE_URL});
