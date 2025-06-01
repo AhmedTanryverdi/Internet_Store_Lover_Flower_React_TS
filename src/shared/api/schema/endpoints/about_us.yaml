@@ -1,0 +1,9 @@
+get:
+    summary: Получение информации о магазине
+    responses:
+        "200":
+            description: Успешно возвращена информация о магазине
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/AboutUsInfo"

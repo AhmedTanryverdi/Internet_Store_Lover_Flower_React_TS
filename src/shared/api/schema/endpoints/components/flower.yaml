@@ -1,0 +1,28 @@
+type: object
+properties:
+    id:
+        type: integer
+        format: int64
+        example: 1
+    name:
+        type: string
+        example: Розы красные
+    price:
+        type: number
+        format: float
+        example: 1500.00
+    image_url:
+        type: string
+        format: uri
+        example: https://example.com/image.png
+    tag_list:
+        type: array
+        items:
+            type: string
+        example: ["букеты", "розы"]
+    color:
+        type: string
+        example: Красный
+    format:
+        type: string
+        example: Бутон

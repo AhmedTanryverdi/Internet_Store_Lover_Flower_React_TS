@@ -1,0 +1,18 @@
+type: object
+properties:
+    user_id:
+        type: integer
+        format: int64
+        example: 1
+    flower_ids:
+        type: array
+        items:
+            type: integer
+            format: int64
+        example: [1, 2]
+    delivery_method:
+        type: string
+        example: Самовывоз
+    payment_method:
+        type: string
+        example: Онлайн-платеж

@@ -1,0 +1,8 @@
+type: object
+properties:
+    question:
+        type: string
+        example: Сколько живут срезанные цветы?
+    answer:
+        type: string
+        example: При правильном уходе цветы могут радовать вас неделю-две.

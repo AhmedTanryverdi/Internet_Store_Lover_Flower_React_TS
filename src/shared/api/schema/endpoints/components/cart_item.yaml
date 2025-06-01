@@ -1,0 +1,14 @@
+type: object
+properties:
+    product_id:
+        type: integer
+        format: int64
+        example: 1
+    quantity:
+        type: integer
+        format: int64
+        example: 3
+    subtotal:
+        type: number
+        format: float
+        example: 4500.00

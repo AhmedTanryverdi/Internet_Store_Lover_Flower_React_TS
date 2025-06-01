@@ -1,0 +1,10 @@
+type: object
+properties:
+    product_id:
+        type: integer
+        format: int64
+        example: 1
+    added_date:
+        type: string
+        format: date-time
+        example: 2023-10-07T12:00:00Z

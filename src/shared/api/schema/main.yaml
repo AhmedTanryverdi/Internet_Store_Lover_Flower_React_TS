@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+    title: Интернет-магазин цветов API
+    description: Спецификация API для интернет-магазина цветов.
+    version: 1.0.0
+
+servers:
+    - url: http://localhost:5173/loverflower
+
+paths:
+    /catalog:
+        $ref: "./endpoints/catalog.yaml"
+    /payment-and-delivery:
+        $ref: "./endpoints/payment_and_delivery.yaml"
+    /about-us:
+        $ref: "./endpoints/contacts.yaml"
+    /contacts:
+        $ref: "./endpoints/contacts.yaml"
+    /faq:
+        $ref: "./endpoints/faq.yaml"
+    /cart:
+        $ref: "./endpoints/cart.yaml"
+    /favorites:
+        $ref: "./endpoints/favorites.yaml"
+
+components:
+    schemas:
+        Flower:
+            $ref: "./endpoints/components/flower.yaml"
+        OrderRequest:
+            $ref: "./endpoints/components/order_request.yaml"
+        OrderResponse:
+            $ref: "./endpoints/components/order_response.yaml"
+        AboutUsInfo:
+            $ref: "./endpoints/components/about_us_info.yaml"
+        ContactInfo:
+            $ref: "./endpoints/components/contact_info.yaml"
+        FAQItem:
+            $ref: "./endpoints/components/faq.yaml"
+        CartItem:
+            $ref: "./endpoints/components/cart_item.yaml"
+        FavoriteItem:
+            $ref: "./endpoints/components/favorite_item.yaml"
+        ErrorResponse:
+            $ref: "./endpoints/components/error_response.yaml"
+
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT

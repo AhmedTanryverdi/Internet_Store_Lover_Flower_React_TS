@@ -1,0 +1,61 @@
+get:
+    summary: Получение списка товаров с возможностью фильтрации
+    parameters:
+        - in: query
+          name: tags
+          schema:
+              type: array
+              items:
+                  type: string
+          style: form
+          explode: false
+          description: Фильтрация по тегам
+        - in: query
+          name: colors
+          schema:
+              type: array
+              items:
+                  type: string
+          style: form
+          explode: false
+          description: Фильтрация по цвету
+        - in: query
+          name: formats
+          schema:
+              type: array
+              items:
+                  type: string
+          style: form
+          explode: false
+          description: Фильтрация по формату
+        - in: query
+          name: min_price
+          schema:
+              type: number
+          description: Минимальная цена
+        - in: query
+          name: max_price
+          schema:
+              type: number
+          description: Максимальная цена
+        - in: query
+          name: sort_by
+          schema:
+              type: string
+              enum: ["price_asc", "price_desc", "popularity"]
+          description: Способ сортировки результатов (по возрастанию цены, убыванию цены, популярности)
+responses:
+    "200":
+        description: Список товаров, удовлетворяющий параметрам фильтрации
+        content:
+            application/json:
+                schema:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/Flower"
+    "400":
+        description: Некорректные входные данные
+        content:
+            application/json:
+                schema:
+                    $ref: "#/components/schemas/ErrorResponse"

@@ -1,0 +1,32 @@
+get:
+    summary: Получение списка избранных товаров
+    responses:
+        "200":
+            description: Успешно возвращён список избранных товаров
+            content:
+                application/json:
+                    schema:
+                        type: array
+                        items:
+                            $ref: "#/components/schemas/FavoriteItem"
+post:
+    summary: Добавление товара в избранные
+    requestBody:
+        required: true
+        content:
+            application/json:
+                schema:
+                    $ref: "#/components/schemas/FavoriteAddRequest"
+    responses:
+        "201":
+            description: Товар успешно добавлен в избранные
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/FavoriteItem"
+        "400":
+            description: Некорректные входные данные
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"

@@ -1,0 +1,11 @@
+get:
+    summary: Получение списка часто задаваемых вопросов
+    responses:
+        "200":
+            description: Успешно возвращён список FAQ
+            content:
+                application/json:
+                    schema:
+                        type: array
+                        items:
+                            $ref: "#/components/schemas/FAQItem"

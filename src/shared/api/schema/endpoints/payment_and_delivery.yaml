@@ -1,0 +1,21 @@
+post:
+    summary: Создание нового заказа
+    requestBody:
+        required: true
+        content:
+            application/json:
+                schema:
+                    $ref: "#/components/schemas/OrderRequest"
+    responses:
+        "201":
+            description: Новый заказ успешно создан
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/OrderResponse"
+        "400":
+            description: Некорректные входные данные
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"

@@ -1,0 +1,5 @@
+type: object
+properties:
+    about_text:
+        type: string
+        example: Мы продаем свежие цветы высокого качества.

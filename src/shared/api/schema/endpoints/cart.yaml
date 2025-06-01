@@ -1,0 +1,32 @@
+get:
+    summary: Получение текущего содержимого корзины
+    responses:
+        "200":
+            description: Успешно возвращено содержимое корзины
+            content:
+                application/json:
+                    schema:
+                        type: array
+                        items:
+                            $ref: "#/components/schemas/CartItem"
+post:
+    summary: Добавление товара в корзину
+    requestBody:
+        required: true
+        content:
+            application/json:
+                schema:
+                    $ref: "#/components/schemas/CartAddRequest"
+    responses:
+        "201":
+            description: Товар успешно добавлен в корзину
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/CartItem"
+        "400":
+            description: Некорректные входные данные
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ErrorResponse"

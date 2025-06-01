@@ -1,0 +1,9 @@
+get:
+    summary: Получение контактной информации магазина
+    responses:
+        "200":
+            description: Успешно возвращены контактные данные
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ContactInfo"

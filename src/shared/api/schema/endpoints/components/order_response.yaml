@@ -1,0 +1,14 @@
+type: object
+properties:
+    order_number:
+        type: integer
+        format: int64
+        example: 1001
+    total_price:
+        type: number
+        format: float
+        example: 3000.00
+    created_at:
+        type: string
+        format: date-time
+        example: 2023-10-07T12:00:00Z

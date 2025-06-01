@@ -1,0 +1,12 @@
+type: object
+properties:
+    phone:
+        type: string
+        example: "+7 (495) 123-45-67"
+    email:
+        type: string
+        format: email
+        example: info@example.com
+    address:
+        type: string
+        example: г. Москва, Красносельская улица, дом 1
