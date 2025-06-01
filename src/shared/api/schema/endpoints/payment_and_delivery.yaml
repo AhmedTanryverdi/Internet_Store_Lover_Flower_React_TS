@@ -5,17 +5,17 @@ post:
         content:
             application/json:
                 schema:
-                    $ref: "#/components/schemas/OrderRequest"
+                    $ref: "../main.yaml#/components/schemas/OrderRequest"
     responses:
         "201":
             description: Новый заказ успешно создан
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/OrderResponse"
+                        $ref: "../main.yaml#/components/schemas/OrderResponse"
         "400":
             description: Некорректные входные данные
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/ErrorResponse"
+                        $ref: "../main.yaml#/components/schemas/ErrorResponse"

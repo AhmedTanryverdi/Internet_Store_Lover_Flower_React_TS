@@ -52,10 +52,10 @@ responses:
                 schema:
                     type: array
                     items:
-                        $ref: "#/components/schemas/Flower"
+                        $ref: "../main.yaml#/components/schemas/Flower"
     "400":
         description: Некорректные входные данные
         content:
             application/json:
                 schema:
-                    $ref: "#/components/schemas/ErrorResponse"
+                    $ref: "../main.yaml#/components/schemas/ErrorResponse"

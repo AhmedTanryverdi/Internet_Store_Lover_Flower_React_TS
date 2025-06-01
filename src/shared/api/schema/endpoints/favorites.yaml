@@ -8,7 +8,7 @@ get:
                     schema:
                         type: array
                         items:
-                            $ref: "#/components/schemas/FavoriteItem"
+                            $ref: "../main.yaml#/components/schemas/FavoriteItem"
 post:
     summary: Добавление товара в избранные
     requestBody:
@@ -16,17 +16,17 @@ post:
         content:
             application/json:
                 schema:
-                    $ref: "#/components/schemas/FavoriteAddRequest"
+                    $ref: "../main.yaml#/components/schemas/FavoriteAddRequest"
     responses:
         "201":
             description: Товар успешно добавлен в избранные
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/FavoriteItem"
+                        $ref: "../main.yaml#/components/schemas/FavoriteItem"
         "400":
             description: Некорректные входные данные
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/ErrorResponse"
+                        $ref: "../main.yaml#/components/schemas/ErrorResponse"

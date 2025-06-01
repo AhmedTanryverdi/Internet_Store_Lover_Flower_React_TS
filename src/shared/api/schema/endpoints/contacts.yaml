@@ -6,4 +6,4 @@ get:
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/ContactInfo"
+                        $ref: "../main.yaml#/components/schemas/ContactInfo"

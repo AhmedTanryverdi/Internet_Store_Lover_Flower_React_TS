@@ -1,0 +1,117 @@
+---
+login:
+    post:
+        summary: User login endpoint
+        description: Authenticate user with provided credentials
+        operationId: loginUser
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            username:
+                                type: string
+                            password:
+                                type: string
+                        required:
+                            - username
+                            - password
+        responses:
+            "200":
+                description: Successful authentication
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                access_token:
+                                    type: string
+                                refresh_token:
+                                    type: string
+            "401":
+                description: Invalid credentials
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                message:
+                                    type: string
+register:
+    post:
+        summary: Register new user
+        description: Create a new account for the user
+        operationId: registerUser
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            username:
+                                type: string
+                            email:
+                                type: string
+                            password:
+                                type: string
+                        required:
+                            - username
+                            - email
+                            - password
+        responses:
+            "201":
+                description: Successfully registered
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                message:
+                                    type: string
+            "400":
+                description: Bad Request
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                message:
+                                    type: string
+refresh:
+    post:
+        summary: Refresh tokens
+        description: Generate new access token using refresh token
+        operationId: refreshToken
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            refresh_token:
+                                type: string
+                        required:
+                            - refresh_token
+        responses:
+            "200":
+                description: Tokens refreshed successfully
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                access_token:
+                                    type: string
+            "401":
+                description: Invalid or expired refresh token
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                message:
+                                    type: string

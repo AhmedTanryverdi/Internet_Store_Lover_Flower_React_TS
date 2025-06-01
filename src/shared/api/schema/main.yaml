@@ -8,12 +8,18 @@ servers:
     - url: http://localhost:5173/loverflower
 
 paths:
+    /auth/login:
+        $ref: "./endpoints/auth.yaml#/login"
+    /auth/register:
+        $ref: "./endpoints/auth.yaml#/register"
+    /auth/refresh:
+        $ref: "./endpoints/auth.yaml#/refresh"
     /catalog:
         $ref: "./endpoints/catalog.yaml"
     /payment-and-delivery:
         $ref: "./endpoints/payment_and_delivery.yaml"
     /about-us:
-        $ref: "./endpoints/contacts.yaml"
+        $ref: "./endpoints/about_us.yaml"
     /contacts:
         $ref: "./endpoints/contacts.yaml"
     /faq:
@@ -41,6 +47,10 @@ components:
             $ref: "./endpoints/components/cart_item.yaml"
         FavoriteItem:
             $ref: "./endpoints/components/favorite_item.yaml"
+        CartAddRequest:
+            $ref: "./endpoints/components/card_add_request.yaml"
+        FavoriteAddRequest:
+            $ref: "./endpoints/components/favorite_add_request.yaml"
         ErrorResponse:
             $ref: "./endpoints/components/error_response.yaml"
 

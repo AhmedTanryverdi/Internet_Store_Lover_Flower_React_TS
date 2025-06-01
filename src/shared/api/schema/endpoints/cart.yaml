@@ -8,7 +8,7 @@ get:
                     schema:
                         type: array
                         items:
-                            $ref: "#/components/schemas/CartItem"
+                            $ref: "../main.yaml#/components/schemas/CartItem"
 post:
     summary: Добавление товара в корзину
     requestBody:
@@ -16,17 +16,19 @@ post:
         content:
             application/json:
                 schema:
-                    $ref: "#/components/schemas/CartAddRequest"
+                    $ref: "../main.yaml#/components/schemas/CartAddRequest"
     responses:
         "201":
             description: Товар успешно добавлен в корзину
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/CartItem"
+                        $ref: "../main.yaml#/components/schemas/CartItem"
         "400":
             description: Некорректные входные данные
             content:
                 application/json:
                     schema:
-                        $ref: "#/components/schemas/ErrorResponse"
+                        $ref: "../main.yaml#/components/schemas/ErrorResponse"
+                
+              

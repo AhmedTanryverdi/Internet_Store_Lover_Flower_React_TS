@@ -8,4 +8,4 @@ get:
                     schema:
                         type: array
                         items:
-                            $ref: "#/components/schemas/FAQItem"
+                            $ref: "../main.yaml#/components/schemas/FAQItem"
