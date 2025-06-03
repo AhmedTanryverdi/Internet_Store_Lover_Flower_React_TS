@@ -1,0 +1,11 @@
+.header__menuNavigate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 50px;
+	text-transform: uppercase;
+	height: 100%;
+	a {
+		color: #fff;
+	}
+}
