@@ -1,6 +1,9 @@
-@mixin flex-center($dir: row) {
-	display: flex;
-	flex-direction: $dir;
-	justify-content: center;
-	align-items: center;
-}
+$primary-light-color: #ffffff;
+
+$primary-dark-color: #040a0a;
+
+$primary-colorful-color: #43ffd2;
+
+$hover-colorful-color: #7d2253;
+
+$secondary-colorful-color: #d978ac;
