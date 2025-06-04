@@ -3,7 +3,7 @@ import { Navigate } from "./ui/navigte/Navigate";
 import { SearchBlock } from "./ui/search-block/SearchBlock";
 import { Logo } from "@/shared/components/logo/Logo";
 import { useLocation } from "react-router-dom";
-import { Email } from "./ui/email/Email";
+import { Email } from "@/shared/components/email/Email";
 import "./styles.scss";
 
 
