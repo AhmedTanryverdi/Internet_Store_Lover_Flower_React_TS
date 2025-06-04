@@ -1,0 +1,61 @@
+@import "@/shared/styles/index.scss";
+
+.footer {
+	max-width: 1440px;
+	width: 100%;
+	background-color: $primary-dark-color;
+
+	&__content {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		align-items: flex-start;
+        column-gap: 5%;
+        padding: 30px 5%;
+	}
+
+	.title {
+		color: $primary-colorful-color;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.footer__column {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		row-gap: 4px;
+	}
+
+	&__column_title,
+	.our-email {
+		max-width: 248px;
+		font-family: Oswald;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 100%;
+		letter-spacing: 4%;
+		text-transform: uppercase;
+		color: $primary-colorful-color;
+		break-inside: avoid-column;
+		text-transform: uppercase;
+	}
+	.footer__column_text-content {
+		opacity: 0.7;
+	}
+
+	.our-email + p {
+		font-family: Oswald;
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 100%;
+		letter-spacing: 10%;
+		text-transform: uppercase;
+		color: $primary-light-color;
+		opacity: 0.7;
+	}
+
+	&__column_text-content {
+		color: $primary-light-color;
+	}
+}
