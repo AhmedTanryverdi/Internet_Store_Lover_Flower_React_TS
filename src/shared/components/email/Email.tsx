@@ -2,17 +2,11 @@ import React from "react";
 
 export const Email: React.FC = (): React.JSX.Element => {
 	return (
-		<div
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "flex-end",
-			}}
-		>
-			<span className="our-email" style={{ alignSelf: "flex-end" }}>
+		<div className="email">
+			<h2 className="email__title" style={{ alignSelf: "flex-end" }}>
 				zakaz@loverflower.by
-			</span>
-			<span style={{ fontSize: "10px", color: "#fff", opacity: 0.8, marginTop: "4px" }}>
+			</h2>
+			<span className="email__subtitle">
 				Доставка 24/7 по договоренности с оператором
 			</span>
 		</div>
