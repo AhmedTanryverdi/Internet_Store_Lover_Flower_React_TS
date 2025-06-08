@@ -1,11 +1,14 @@
 @import "@/shared/styles/index.scss";
 
 .header {
+	max-width: 1440px;
 	width: 100%;
+
 	background-color: transparent;
 
 	&__content {
 		height: 80px;
+		padding: 0 156px;
 		font-size: 14px;
 		@include flex-center();
 		justify-content: flex-start;
