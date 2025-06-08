@@ -12,7 +12,7 @@ export const SearchBlock: React.FC = (): React.JSX.Element => {
 				setIsActived(true);
 			} else if (event.target.closest(".close-icon")) {
 				setValue("");
-			}else{
+			} else{
 				!event.target.closest(".search-input") && setIsActived(false);
 			}
 		};
