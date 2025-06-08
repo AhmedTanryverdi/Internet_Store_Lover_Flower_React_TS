@@ -1,0 +1,22 @@
+@import "@/shared/styles/index.scss";
+
+.contact-cart {
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	* {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.number-phone {
+		width: 133px;
+		color: $primary-colorful-color;
+		margin-left: 10px;
+	}
+
+	.cart-icon {
+		margin-left: 21px;
+	}
+}
