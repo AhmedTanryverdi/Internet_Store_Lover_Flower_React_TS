@@ -1,0 +1,25 @@
+@import "@/shared/styles/index.scss";
+
+.first-section-home-title {
+	.title {
+		text-align: center;
+		font-family: Cormorant;
+		font-weight: 300;
+		font-size: 200px;
+		line-height: 100%;
+		letter-spacing: 20%;
+		text-transform: uppercase;
+		color: $primary-light-color;
+	}
+
+	.subtitle {
+		margin-top: 40px;
+		font-family: Oswald;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 100%;
+		letter-spacing: 2%;
+		text-align: center;
+		color: $primary-light-color;
+	}
+}
