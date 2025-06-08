@@ -1,0 +1,17 @@
+.social-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 60px;
+	height: 154px;
+	margin-top: 70px;
+	background-color: #00000027;
+	backdrop-filter: blur(20px);
+	border-radius: 10px;
+	margin-left: 50%;
+
+	svg{
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,46 @@
+@import "@/shared/styles/index.scss";
+
+.right-contact-block {
+	display: inline-block;
+	position: absolute;
+	z-index: 100;
+	top: 10px;
+	right: 55px;
+	text-align: right;
+
+	.email {
+		font-family: 'Oswald';
+		line-height: 100%;
+		letter-spacing: 10%;
+		&__title {
+			color: $primary-colorful-color;
+			font-weight: 400;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+
+		&__subtitle {
+			font-weight: 300;
+			font-size: 8px;
+			text-transform: uppercase;
+			color: $primary-light-color;
+			margin-top: 4px;
+		}
+	}
+
+	.cartIcon {
+		width: 60px;
+		height: 60px;
+		margin-top: 200px;
+		margin-right: 10px;
+		background-color: #00000033;
+		@include flex-center;
+		backdrop-filter: blur(20px);
+		border-radius: 10px;
+		margin-left: 50%;
+
+	}
+	.cartIcon:hover {
+		cursor: pointer;
+	}
+}
