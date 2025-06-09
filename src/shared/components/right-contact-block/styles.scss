@@ -4,7 +4,7 @@
 	display: inline-block;
 	position: absolute;
 	z-index: 100;
-	top: 10px;
+	top: 20px;
 	right: 55px;
 	text-align: right;
 
@@ -32,12 +32,13 @@
 		width: 60px;
 		height: 60px;
 		margin-top: 200px;
-		margin-right: 10px;
 		background-color: #00000033;
 		@include flex-center;
 		backdrop-filter: blur(20px);
 		border-radius: 10px;
-		margin-left: 50%;
+		position: absolute;
+		right: 0;
+		top: 300px;
 
 	}
 	.cartIcon:hover {

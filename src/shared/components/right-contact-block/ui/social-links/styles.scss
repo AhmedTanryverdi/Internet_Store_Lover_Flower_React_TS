@@ -9,9 +9,10 @@
 	background-color: #00000027;
 	backdrop-filter: blur(20px);
 	border-radius: 10px;
-	margin-left: 50%;
+	position: absolute;
+	right: 0;
 
-	svg{
+	svg {
 		cursor: pointer;
 	}
 }
