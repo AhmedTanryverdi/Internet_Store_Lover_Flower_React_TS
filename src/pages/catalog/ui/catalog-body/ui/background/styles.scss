@@ -1,0 +1,64 @@
+.catalog-background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	background-color: #000;
+	overflow: hidden;
+
+	.gradient {
+		width: 504px;
+		height: 360px;
+		border-radius: 50%;
+		position: relative;
+		z-index: -1;
+	}
+
+	.top-left {
+		top: 40px;
+		left: -100px;
+		background: radial-gradient(
+			circle,
+			#7d225390,
+			#7d225360,
+			#7d225340,
+			#000
+		);
+		backdrop-filter: blur(250px);
+		transform: rotate(-33deg);
+	}
+
+	.middle-left {
+		width: 747px;
+		height: 173px;
+		top: 1850.57px;
+		left: 23px;
+
+		top: -200px;
+		left: -100px;
+		background: radial-gradient(
+			ellipse,
+			#43ffd290,
+			#43ffd245,
+			#43ffd220,
+			transparent
+		);
+		backdrop-filter: blur(250px);
+		transform: rotate(-52deg);
+	}
+
+	.top-right {
+		top: -300px;
+		right: -900px;
+		background: radial-gradient(
+			circle,
+			#7d225390,
+			#7d225360,
+			#7d225340,
+			#000
+		);
+		backdrop-filter: blur(250px);
+		transform: rotate(33deg);
+	}
+}

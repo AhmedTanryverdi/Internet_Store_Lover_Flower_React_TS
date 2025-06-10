@@ -1,0 +1,10 @@
+.catalog-body {
+	width: 100%;
+	position: relative;
+	&__content {
+		display: flex;
+		justify-content: flex-start;
+		column-gap: 30px;
+		padding: 0 165px;
+	}
+}
