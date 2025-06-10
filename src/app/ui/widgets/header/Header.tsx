@@ -12,7 +12,6 @@ export const Header: React.FC = (): React.JSX.Element => {
 	const [isBlock, setIsBlock] = useState(setBlock(location.pathname));
 
 	useEffect(() => {
-		console.log(location.pathname, isBlock);
 		setIsBlock(setBlock(location.pathname));
 	}, [location.pathname]);
 
