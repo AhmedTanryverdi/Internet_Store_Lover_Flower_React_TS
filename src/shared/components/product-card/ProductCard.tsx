@@ -2,6 +2,7 @@ import React from "react";
 import { CardHeader } from "./ui/card-header/CardHeader";
 import { CardBody } from "./ui/card-body/CardBody";
 import { CardFooter } from "./ui/card-footer/CardFooter";
+import "./styles.scss";
 
 export const ProductCard: React.FC<{
 	cardHeaderElement: React.ReactNode;
