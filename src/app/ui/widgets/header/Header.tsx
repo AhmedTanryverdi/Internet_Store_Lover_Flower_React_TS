@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Navigate } from "./ui/navigte/Navigate";
 import { SearchBlock } from "./ui/search-block/SearchBlock";
 import { Logo } from "@/shared/components/logo/Logo";
-import { useLocation } from "react-router-dom";
 import { ContactCart } from "./ui/contact-cart/ContactCart";
 import "./styles.scss";
 
-export const Header: React.FC = (): React.JSX.Element => {
-	const location = useLocation();
-
-	const [isBlock, setIsBlock] = useState(setBlock(location.pathname));
-
-	useEffect(() => {
-		setIsBlock(setBlock(location.pathname));
-	}, [location.pathname]);
-
+export const Header: React.FC<{ isBlock: boolean }> = ({
+	isBlock,
+}): React.JSX.Element => {
 	return (
 		<div
 			className="header"
@@ -36,7 +29,3 @@ export const Header: React.FC = (): React.JSX.Element => {
 		</div>
 	);
 };
-
-function setBlock(path: string) {
-	return path === "/" || path === "/catalog" ? false : true;
-}
