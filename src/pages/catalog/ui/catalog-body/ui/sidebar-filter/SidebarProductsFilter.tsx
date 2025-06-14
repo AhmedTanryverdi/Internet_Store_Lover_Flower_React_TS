@@ -39,6 +39,16 @@ const initialFilters = [
 			{ id: "inTheMailbox", label: "в ящике", checked: false },
 		],
 	},
+	{
+		title: "по цвету",
+		options: [
+			{ id: "Alstroemeria", label: "Альстромерия", checked: false },
+			{ id: "Anthurium", label: "Антуриум", checked: false },
+			{ id: "Asparagus", label: "Аспарагус", checked: false },
+			{ id: "Astilba", label: "Астильба", checked: false },
+			{ id: "Astrancia", label: "Астранция", checked: false },
+		],
+	},
 ];
 
 export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
@@ -69,6 +79,10 @@ export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
 						/>
 					);
 				})}
+				<label htmlFor="">
+					<p>Стоимость</p>
+					<input type="range" />
+				</label>
 			</div>
 		</aside>
 	);
