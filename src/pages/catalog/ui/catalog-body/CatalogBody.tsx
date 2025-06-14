@@ -1,9 +1,10 @@
 import React from "react";
 import { SidebarProductsFilter } from "./ui/sidebar-filter/SidebarProductsFilter";
-import { ProductsBlock } from "./ui/products-block/ProductsBlock";
 import { CatalogBackground } from "./ui/background/CatalogBackground";
 import { CatalogFilter } from "./ui/catalog-filter/CatalogFilter";
+import { ProductsBlockContainer } from "./ui/products-block/ProductsBlockContainer";
 import "./styles.scss";
+
 
 export const CatalogBody: React.FC = (): React.JSX.Element => {
 	return (
@@ -13,7 +14,7 @@ export const CatalogBody: React.FC = (): React.JSX.Element => {
 				<CatalogFilter />
 				<div className="catalog-body__content">
 					<SidebarProductsFilter />
-					<ProductsBlock />
+					<ProductsBlockContainer />
 				</div>
 			</div>
 		</div>

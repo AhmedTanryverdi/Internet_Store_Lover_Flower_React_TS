@@ -58,7 +58,7 @@ export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
 
 	return (
 		<aside className="aside-product-filter">
-			<div className="content">
+			<div className="aside-product-filter__content">
 				{filters.map((item, index) => {
 					return (
 						<FilterSection
