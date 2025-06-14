@@ -1,7 +1,4 @@
 .aside-product-filter {
-	border-radius: 20px;
-	backdrop-filter: blur(20px);
-
 	&__content {
 		width: 255px;
 		display: flex;
@@ -10,5 +7,6 @@
 		justify-content: flex-start;
 		row-gap: 20px;
 		padding: 20px 16px;
+		backdrop-filter: blur(20px);
 	}
 }
