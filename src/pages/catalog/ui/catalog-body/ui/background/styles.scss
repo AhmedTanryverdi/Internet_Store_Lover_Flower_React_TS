@@ -61,4 +61,37 @@
 		backdrop-filter: blur(250px);
 		transform: rotate(33deg);
 	}
+
+	.bottom-left {
+		width: 447px;
+		height: 273px;
+		top: 1750.57px;
+		left: 23px;
+
+		background: radial-gradient(
+			ellipse,
+			#43ffd290,
+			#43ffd245,
+			#43ffd220,
+			transparent
+		);
+		backdrop-filter: blur(250px);
+		transform: rotate(-32deg);
+	}
+	.bottom-right {
+		width: 447px;
+		height: 473px;
+		top: 1450.57px;
+		left: 923px;
+
+		background: radial-gradient(
+			circle,
+			#7d225390,
+			#7d225360,
+			#7d225340,
+			#000
+		);
+		backdrop-filter: blur(250px);
+		transform: rotate(-32deg);
+	}
 }

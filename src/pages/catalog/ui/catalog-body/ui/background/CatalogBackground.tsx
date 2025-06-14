@@ -7,6 +7,8 @@ export const CatalogBackground: React.FC = (): React.JSX.Element => {
 			<div className="gradient top-left"></div>
 			<div className="gradient top-right"></div>
 			<div className="gradient middle-left"></div>
+			<div className="gradient bottom-left"></div>
+			<div className="gradient bottom-right"></div>
 		</div>
 	);
 };
