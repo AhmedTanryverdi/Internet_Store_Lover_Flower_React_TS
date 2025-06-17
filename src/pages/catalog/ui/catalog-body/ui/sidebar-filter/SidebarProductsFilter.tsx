@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FilterSection } from "./ui/FilterSection";
 import "./styles.scss";
+import { RangeSlider } from "./ui/range-slider/RangeSlider";
 
 type OptionsType = {
 	id: string;
@@ -79,10 +80,7 @@ export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
 						/>
 					);
 				})}
-				<label htmlFor="">
-					<p>Стоимость</p>
-					<input type="range" />
-				</label>
+				<RangeSlider />
 			</div>
 		</aside>
 	);
