@@ -1,11 +1,7 @@
 import React from "react";
+import type { OptionsType } from "@/shared/lib/types";
 import "./styles.scss";
 
-type OptionsType = {
-	id: string;
-	label: string;
-	checked: boolean;
-};
 
 export const FilterSection: React.FC<{
 	title: string;
