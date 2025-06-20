@@ -1,29 +1,11 @@
 import React from "react";
 import { FilterSection } from "./ui/FilterSection";
 import { RangeSlider } from "./ui/range-slider/RangeSlider";
-import { useSelector } from "react-redux";
-import { useAppDispatch, type RooteState } from "@/app/store";
-import type { CheckboxFilterType, OptionsType } from "@/shared/lib/types";
-import { changeFilter } from "@/features/slices/sidebar-filter/sidebarFilterSlice";
+import { useSettingFilter } from "./utils/customHooks";
 import "./styles.scss";
 
 export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
-	const filters = useSelector<RooteState, CheckboxFilterType[]>(
-		(state) => state.sideBarFilter.checkboxFilters
-	);
-
-	const dispatch = useAppDispatch();
-
-	const handleCheckboxChange = (option: OptionsType) => {
-		const updatedFilters: CheckboxFilterType[] = filters.map((section) => ({
-			...section,
-			options: section.options.map((opt) =>
-				opt.id === option.id ? { ...opt, checked: !opt.checked } : opt
-			),
-		}));
-
-		dispatch(changeFilter(updatedFilters));
-	};
+	const { min, max, handleCheckboxChange, filters } = useSettingFilter();
 
 	return (
 		<aside className="aside-product-filter">
@@ -38,7 +20,7 @@ export const SidebarProductsFilter: React.FC = (): React.JSX.Element => {
 						/>
 					);
 				})}
-				<RangeSlider />
+				<RangeSlider min={min} max={max} />
 			</div>
 		</aside>
 	);

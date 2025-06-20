@@ -1,27 +1,26 @@
-import React, { useRef, useState } from "react";
+import React, { memo } from "react";
+import { useAppDispatch } from "@/app/store";
+import {
+	setRangeMaxFilter,
+	setRangeMinFilter,
+} from "@/features/slices/sidebar-filter/sidebarFilterSlice";
+import { useRange } from "./utils/customHooks";
 import "./styles.scss";
 
-export const RangeSlider: React.FC = (): React.JSX.Element => {
-	const [value1, setValue1] = useState(40);
-	const [value2, setValue2] = useState(400);
-	const sliderOneRef = useRef<HTMLInputElement>(null);
-	const sliderTwoRef = useRef<HTMLInputElement>(null);
+export const RangeSlider: React.FC<{
+	min: number;
+	max: number;
+}> = memo(({ min, max }): React.JSX.Element => {
+	const dispatch = useAppDispatch();
+	const {
+		sliderOneRef,
+		sliderTwoRef,
+		handleSliderOneChange,
+		handleSliderTwoChange,
+		localMin,
+		localMax,
+	} = useRange(min, max);
 
-    const handleSliderOneChange = (
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
-		const newValue = Number(event.target.value);
-		if (newValue > value2) return;
-		setValue1(newValue);
-	};
-
-	const handleSliderTwoChange = (
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
-		const newValue = Number(event.target.value);
-		if (newValue < value1) return; 
-		setValue2(newValue);
-	};
 	return (
 		<div className="range-slider">
 			<div className="range-slider__wrapper">
@@ -30,29 +29,35 @@ export const RangeSlider: React.FC = (): React.JSX.Element => {
 					<input
 						type="range"
 						ref={sliderOneRef}
-						min={40}
-						max={400}
-						value={value1}
+						min={100}
+						max={2000}
+						value={localMin}
 						onChange={handleSliderOneChange}
+						onMouseUp={(event: any) =>
+							dispatch(setRangeMinFilter(event.target.value))
+						}
 						id="slider-1"
 					/>
 					<input
 						type="range"
 						ref={sliderTwoRef}
-						min={40}
-						max={400}
-						value={value2}
+						min={100}
+						max={2000}
+						value={localMax}
 						onChange={handleSliderTwoChange}
+						onMouseUp={(event: any) =>
+							dispatch(setRangeMaxFilter(event.target.value))
+						}
 						id="slider-2"
 					/>
 				</div>
 				<div className="range-slider__price-block">
 					<span>Цена:</span>
-					<span>{value1}</span>
+					<span>{localMin}</span>
 					<span>-</span>
-					<span>{value2}</span>
+					<span>{localMax}</span>
 				</div>
 			</div>
 		</div>
 	);
-};
+});
