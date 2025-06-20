@@ -1,4 +1,4 @@
-import type { CheckboxFilterType, RangeFilterType } from "./types";
+import type { CheckboxFilterType, RangeFilterType, TagType } from "./types";
 
 export const MENU_NAVIGATE = [
 	{ label: "Каталог", link: "/catalog" },
@@ -84,6 +84,28 @@ export const CHECKBOX_FILTERS: CheckboxFilterType[] = [
 ];
 
 export const RANGE_FILTER: RangeFilterType = {
-	min: 40,
-	max: 400,
+	min: 100,
+	max: 2000,
 };
+
+export const TAGS: TagType = undefined;
+
+export const TAGS_MENU = [
+	{ title: "Букеты из гипсофил", tags: ["букеты", "гипсофил"] },
+	{ title: "Букеты из ромашек", tags: ["букеты", "ромашки"] },
+	{ title: "Букеты из хризантем", tags: ["букеты", "хризантем"] },
+	{ title: "Комнатные цветы в горшках", tags: ["комнатные цветы"] },
+	{ title: "Монобукеты", tags: ["монобукеты"] },
+	{ title: "Сборные букеты", tags: ["Сборные букеты"] },
+	{ title: "Букет на праздник", tags: ["букеты", "праздник"] },
+	{ title: "Композиции из цветов", tags: ["композиция"] },
+	{ title: "Конверты", tags: ["конверты"] },
+	{ title: "Открытки", tags: ["открытки"] },
+	{ title: "Подарки", tags: ["подарки"] },
+	{ title: "Букеты из сухоцветов", tags: ["сухоцветы"] },
+	{ title: "Шары", tags: ["шары"] },
+	{ title: "Популярное", tags: ["популярное"] },
+	{ title: "Букеты роз", tags: ["букеты", "розы"] },
+	{ title: "Цветы на похороны", tags: ["похороны"] },
+	{ title: "Упаковка подарков", tags: ["подарки"] },
+];
