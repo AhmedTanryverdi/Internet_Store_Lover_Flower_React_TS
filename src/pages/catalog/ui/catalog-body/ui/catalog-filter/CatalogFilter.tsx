@@ -18,6 +18,12 @@ export const CatalogFilter: React.FC = (): React.JSX.Element => {
 							<option value="По популярности">
 								По популярности
 							</option>
+							<option value="сначала дорогие">
+								сначала дорогие
+							</option>
+							<option value="сначала дешевые">
+								сначала дешевые
+							</option>
 						</select>
 					</label>
 				</div>
