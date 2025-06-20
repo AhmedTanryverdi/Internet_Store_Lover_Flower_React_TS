@@ -13,3 +13,5 @@ export type RangeFilterType = {
 	min: number;
 	max: number;
 };
+
+export type TagType = string[] | undefined;
