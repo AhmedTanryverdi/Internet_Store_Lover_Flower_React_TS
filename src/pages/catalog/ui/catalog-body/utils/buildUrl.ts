@@ -1,7 +1,15 @@
-import type { CheckboxFilterType } from "@/shared/lib/types";
+import type { CheckboxFilterType, TagType } from "@/shared/lib/types";
 
-export function buildUrlWithFilter(filters: CheckboxFilterType[]) {
+export function buildUrlWithFilter(
+	filters: CheckboxFilterType[],
+	min: number,
+	max: number,
+	tags: TagType
+) {
 	const params = new URLSearchParams();
+	params.set("price_min", `${min}&`);
+	params.set("price_max", `${max}&`);
+	params.set("tags", `${tags}&`);
 
 	filters.forEach((filter) => {
 		const selectedOptions = filter.options.filter(
@@ -14,5 +22,5 @@ export function buildUrlWithFilter(filters: CheckboxFilterType[]) {
 			);
 		}
 	});
-	return `/catalog?${params}`;
+	return `http://localhost:3000/catalog?${params}`;
 }
