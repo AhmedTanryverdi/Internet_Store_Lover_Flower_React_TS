@@ -1,27 +1,12 @@
 import React from "react";
+import { TAGS_MENU as TAGS } from "@/shared/lib/constants";
+import { useAppDispatch } from "@/app/store";
+import { setTags } from "@/features/slices/sidebar-filter/sidebarFilterSlice";
 import "./styles.scss";
 
-const TAGS = [
-	"Букеты из гипсофил",
-	"Букеты из ромашек",
-	"Букеты из хризантем",
-	"Комнатные цветы в горшках",
-	"Монобукеты",
-	"Сборные букеты",
-	"Букет на праздник",
-	"Композиции из цветов",
-	"Конверты",
-	"Открытки",
-	"Подарки",
-	"Букеты из сухоцветов",
-	"Шары",
-	"Популярное",
-	"Букеты роз",
-	"Цветы на похороны",
-	"Упаковка подарков",
-];
-
 export const Title: React.FC = (): React.JSX.Element => {
+	const dispatch = useAppDispatch();
+
 	return (
 		<div className="title-block">
 			<div className="title">
@@ -32,8 +17,15 @@ export const Title: React.FC = (): React.JSX.Element => {
 				В нашем магазине самый большой выбор букетов для любых событий:
 			</div>
 			<div className="tags">
-				{TAGS.map((item, index)=>{
-					return <span key={index}>{item}</span>
+				{TAGS.map((item, index) => {
+					return (
+						<span
+							key={index}
+							onClick={() => dispatch(setTags(item.tags))}
+						>
+							{item.title}
+						</span>
+					);
 				})}
 			</div>
 		</div>
