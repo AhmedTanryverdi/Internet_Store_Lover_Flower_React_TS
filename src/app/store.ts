@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import sidebarFilterSlice from "@/features/slices/sidebar-filter/sidebarFilterSlice";
-import sortSlice from "@/features/slices/sort/sort";
+import {sidebarFilterSlice} from "@/features/slices/index";
+import {sortSlice} from "@/features/slices/index";
 
 export const store = configureStore({
 	reducer: {

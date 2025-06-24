@@ -24,3 +24,14 @@ export function buildUrlWithFilter(
 	});
 	return `http://localhost:3000/catalog?${params}`;
 }
+
+export function createUrl(
+	filterSetting: CheckboxFilterType[],
+	min: number,
+	max: number,
+	tags: TagType
+) {
+	return decodeURIComponent(
+		buildUrlWithFilter(filterSetting, min, max, tags)
+	);
+}

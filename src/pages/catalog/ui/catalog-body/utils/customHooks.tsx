@@ -3,8 +3,9 @@ import type { ApiSchemas } from "@/shared/api/schema";
 import type { CheckboxFilterType, TagType } from "@/shared/lib/types";
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { buildUrlWithFilter } from "./buildUrl";
+import { createUrl } from "./buildUrl";
 import { useMemo } from "react";
+import { sortFlowers } from "./helper";
 
 type FlowerType = ApiSchemas["flower"];
 
@@ -28,13 +29,11 @@ export const useFetchFlowers = () => {
 	const { isPending, error, data }: UseQueryResult<FlowerType[]> = useQuery({
 		queryKey: ["products", filterSetting, rangeFilter, tags],
 		queryFn: async () => {
-			const URL = decodeURIComponent(
-				buildUrlWithFilter(
-					filterSetting,
-					rangeFilter.min,
-					rangeFilter.max,
-					tags
-				)
+			const URL = createUrl(
+				filterSetting,
+				rangeFilter.min,
+				rangeFilter.max,
+				tags
 			);
 			const response = await fetch(URL);
 			const responseData = (await response.json()) as FlowerType[];
@@ -45,26 +44,10 @@ export const useFetchFlowers = () => {
 	const sortedData = useMemo(() => {
 		if (!data) return [];
 
-		const sortedArray = [...data];
-		sortedArray.sort((a, b) => {
-			const priceA = a.price ?? Number.MAX_SAFE_INTEGER;
-			const priceB = b.price ?? Number.MAX_SAFE_INTEGER;
-			const ratingA = a.rating ?? 5;
-			const ratingB = b.rating ?? 5;
-
-			if(sortOrder === "rating"){
-				return ratingB - ratingA;
-			}
-			else if (sortOrder === "asc") {
-				return priceA - priceB;
-			} else if (sortOrder === "desc") {
-				return priceB - priceA;
-			}
-
-			return 0;
-		});
-
-		return sortedArray;
+		return sortFlowers(data, sortOrder);
 	}, [data, sortOrder]);
+
 	return { isPending, error, data: sortedData };
 };
+
+
