@@ -548,6 +548,8 @@ export interface components {
             color?: string;
             /** @example Бутон */
             format?: string;
+            /** Format: int64 */
+            rating?: number;
         };
     };
     responses: never;

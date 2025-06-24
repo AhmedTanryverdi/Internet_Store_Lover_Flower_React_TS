@@ -26,3 +26,6 @@ properties:
     format:
         type: string
         example: Бутон
+    rating:
+        type: number
+        format: int64
