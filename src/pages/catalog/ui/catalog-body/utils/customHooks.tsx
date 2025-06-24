@@ -4,6 +4,7 @@ import type { CheckboxFilterType, TagType } from "@/shared/lib/types";
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { buildUrlWithFilter } from "./buildUrl";
+import { useMemo } from "react";
 
 type FlowerType = ApiSchemas["flower"];
 
@@ -18,6 +19,10 @@ export const useFetchFlowers = () => {
 
 	const tags = useSelector<RooteState, TagType>(
 		(state) => state.sideBarFilter.tags
+	);
+
+	const sortOrder = useSelector<RooteState, string>(
+		(state) => state.sort.sortOrder
 	);
 
 	const { isPending, error, data }: UseQueryResult<FlowerType[]> = useQuery({
@@ -36,5 +41,30 @@ export const useFetchFlowers = () => {
 			return responseData;
 		},
 	});
-	return { isPending, error, data };
+
+	const sortedData = useMemo(() => {
+		if (!data) return [];
+
+		const sortedArray = [...data];
+		sortedArray.sort((a, b) => {
+			const priceA = a.price ?? Number.MAX_SAFE_INTEGER;
+			const priceB = b.price ?? Number.MAX_SAFE_INTEGER;
+			const ratingA = a.rating ?? 5;
+			const ratingB = b.rating ?? 5;
+
+			if(sortOrder === "rating"){
+				return ratingB - ratingA;
+			}
+			else if (sortOrder === "asc") {
+				return priceA - priceB;
+			} else if (sortOrder === "desc") {
+				return priceB - priceA;
+			}
+
+			return 0;
+		});
+
+		return sortedArray;
+	}, [data, sortOrder]);
+	return { isPending, error, data: sortedData };
 };
