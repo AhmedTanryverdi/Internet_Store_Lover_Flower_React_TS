@@ -550,6 +550,7 @@ export interface components {
             format?: string;
             /** Format: int64 */
             rating?: number;
+            images?: string[];
         };
     };
     responses: never;
