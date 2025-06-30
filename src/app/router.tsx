@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import App from "@/app/ui/App";
 import { CONFIG } from "@/shared/model/config";
 import { queryClient } from "@/shared/api/query_client";
+import OneProduct from "@/pages/one-product/OneProduct";
 
 export const router = createBrowserRouter(
 	[
@@ -29,6 +30,10 @@ export const router = createBrowserRouter(
 				{
 					path: ROUTES.CONTACTS,
 					lazy: () => import("../pages/contacts/Contacts"),
+				},
+				{
+					path: ROUTES.FLOWER,
+					element: <OneProduct />
 				},
 			],
 		},
