@@ -1,7 +1,12 @@
-.product-card{
-    width: 255px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.product-card {
+	width: 255px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+
+	&:hover {
+		transform: translateY(-10px);
+	}
 }
