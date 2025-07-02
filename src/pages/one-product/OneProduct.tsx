@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProductImages } from "./ui/product-images/ProductImages";
+import { ProductDetails } from "./ui/product-details/ProductDetails";
+import type { ApiSchemas } from "@/shared/api/schema";
+import "./styles.scss";
+
+type FlowerType = ApiSchemas["flower"];
 
 const OneProduct: React.FC = (): React.JSX.Element => {
 	const { flowerId } = useParams();
-	const [flower, setFlower] = useState({});
+	const [flower, setFlower] = useState<FlowerType>({});
 
 	useEffect(() => {
 		fetch(`http://localhost:3000/catalog/${flowerId}`)
@@ -13,7 +19,12 @@ const OneProduct: React.FC = (): React.JSX.Element => {
 
 	return (
 		<div className="one-product">
-			<div className="container">{flowerId}</div>
+			<div className="container">
+				<div className="content">
+					<ProductImages images={flower.images}/>
+					<ProductDetails name={flower.name} price={flower.price} />
+				</div>
+			</div>
 		</div>
 	);
 };
