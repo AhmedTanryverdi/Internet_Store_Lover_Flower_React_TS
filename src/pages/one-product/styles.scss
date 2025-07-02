@@ -1,0 +1,9 @@
+@import "@/shared/styles/index.scss";
+
+.one-product {
+	.content {
+		@include flex-center;
+        align-items: flex-start;
+        column-gap: 30px;
+	}
+}
