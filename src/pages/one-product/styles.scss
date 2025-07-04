@@ -1,9 +1,25 @@
 @import "@/shared/styles/index.scss";
 
 .one-product {
+	background-color: $primary-dark-color;
 	.content {
 		@include flex-center;
-        align-items: flex-start;
-        column-gap: 30px;
+		align-items: flex-start;
+		column-gap: 30px;
+	}
+
+	&__background {
+		width: 100%;
+		height: 460px;
+
+		position: absolute;
+		z-index: 1;
+		background: radial-gradient(
+			circle,
+			#7d225390,
+			#7d225360,
+			#7d225340,
+			#000
+		);
 	}
 }
