@@ -21,7 +21,8 @@ const OneProduct: React.FC = (): React.JSX.Element => {
 		<div className="one-product">
 			<div className="container">
 				<div className="content">
-					<ProductImages images={flower.images}/>
+					<div className="one-product__background"></div>
+					<ProductImages images={flower.images} />
 					<ProductDetails name={flower.name} price={flower.price} />
 				</div>
 			</div>
