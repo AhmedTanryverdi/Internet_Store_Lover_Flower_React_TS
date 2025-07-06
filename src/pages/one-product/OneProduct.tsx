@@ -4,6 +4,7 @@ import { ProductImages } from "./ui/product-images/ProductImages";
 import { ProductDetails } from "./ui/product-details/ProductDetails";
 import type { ApiSchemas } from "@/shared/api/schema";
 import "./styles.scss";
+import { ProductReviews } from "./ui/product-reviews/ProductReviews";
 
 type FlowerType = ApiSchemas["flower"];
 
@@ -22,8 +23,14 @@ const OneProduct: React.FC = (): React.JSX.Element => {
 			<div className="container">
 				<div className="content">
 					<div className="one-product__background"></div>
-					<ProductImages images={flower.images} />
-					<ProductDetails name={flower.name} price={flower.price} />
+					<div className="product">
+						<ProductImages images={flower.images} />
+						<ProductDetails
+							name={flower.name}
+							price={flower.price}
+						/>
+					</div>
+					<ProductReviews />
 				</div>
 			</div>
 		</div>
