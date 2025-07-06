@@ -2,7 +2,7 @@
 
 .one-product {
 	background-color: $primary-dark-color;
-	.content {
+	.product {
 		@include flex-center;
 		align-items: flex-start;
 		column-gap: 30px;
