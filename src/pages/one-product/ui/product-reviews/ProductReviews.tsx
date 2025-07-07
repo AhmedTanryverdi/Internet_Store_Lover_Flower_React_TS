@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "./styles.scss";
 
 interface IProductReviewForm {
-	reviews: string;
+	review: string;
 	username: string;
 	email: string;
 }
@@ -16,7 +16,11 @@ export const ProductReviews: React.FC = (): React.JSX.Element => {
 	} = useForm<IProductReviewForm>({ mode: "onBlur" });
 
 	const actionSubmit = (data: IProductReviewForm) => {
-		console.log(data);
+		fetch("http://localhost:3000/send-reviews", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(data),
+		});
 	};
 
 	return (
@@ -32,7 +36,7 @@ export const ProductReviews: React.FC = (): React.JSX.Element => {
 							<textarea
 								id="reviews"
 								placeholder="Введите комментарий"
-								{...register("reviews", {
+								{...register("review", {
 									required: {
 										message:
 											"напишити отзыв, чтобы отравить",
@@ -40,16 +44,16 @@ export const ProductReviews: React.FC = (): React.JSX.Element => {
 									},
 								})}
 								style={
-									errors.reviews && {
+									errors.review && {
 										boxShadow: "0px 0 3px 3px red",
 									}
 								}
 							/>
-							{errors.reviews && (
+							{errors.review && (
 								<span
 									style={{ color: "red", display: "block" }}
 								>
-									{errors.reviews.message}
+									{errors.review.message}
 								</span>
 							)}
 						</label>
